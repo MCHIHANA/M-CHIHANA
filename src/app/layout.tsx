@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "Personal portfolio showcasing my work and skills",
+  title: "Misheck Chihana | Full Stack Developer",
+  description: "4th Year BSC Computer Science student at University of Malawi. Full Stack Developer specializing in React, NestJS, OpenGL, and modern web technologies.",
 };
 
 export default function RootLayout({
