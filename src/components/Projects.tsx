@@ -16,6 +16,16 @@ const projects = [
   },
   {
     id: 2,
+    title: 'Digital Wallet System',
+    description: 'Backend-driven virtual bank platform with user registration, wallet accounts, and balance management synced with PayChangu merchant account. Supports wallet-to-user transactions.',
+    image: '/digital-wallet.png',
+    gradient: 'from-blue-500 to-cyan-500',
+    tags: ['NestJS', 'PayChangu', 'SQL', 'REST API', 'Railway'],
+    github: '#',
+    live: '#',
+  },
+  {
+    id: 3,
     title: 'Solar System Simulation',
     description: '3D interactive solar system simulation with textured rotating Sun, orbiting planets, and asteroid belt. Built with modern OpenGL featuring realistic celestial motion and transformations.',
     image: '/solarsystem.jpeg',
@@ -25,17 +35,17 @@ const projects = [
     live: '#',
   },
   {
-    id: 3,
-    title: 'TourMalawi – Tourism Platform',
-    description: 'Tourism web platform showcasing Malawi\'s destinations, national parks, Lake Malawi, culture, and accommodations. Features travel guides and beautiful visuals to promote Malawi tourism.',
+    id: 4,
+    title: 'TourMalawi – Tourism Mobile App',
+    description: 'Android tourism application showcasing Malawi\'s destinations, national parks, Lake Malawi, culture, and accommodations. Features dark/light mode, Firebase backend, and PayChangu payment integration.',
     image: '/tourmalawi.png',
     gradient: 'from-orange-500 to-red-500',
-    tags: ['React', 'Tailwind', 'Google Maps', 'Travel APIs'],
+    tags: ['Android Studio', 'Java', 'Kotlin', 'Firebase', 'PayChangu'],
     github: '#',
     live: '#',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Godot Vehicle Simulation',
     description: '3D vehicle simulation game with realistic wheel rotation, suspension physics, and environment rendering. Features improved lighting, particle effects, and enhanced vehicle dynamics.',
     image: '/game.jpg',
@@ -79,6 +89,10 @@ export default function Projects() {
                     alt={project.title}
                     width={800}
                     height={600}
+                    loading="lazy"
+                    quality={85}
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA3gAA="
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>

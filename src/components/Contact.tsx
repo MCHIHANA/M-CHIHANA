@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,13 +16,31 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('sending');
-    
-    // Simulate form submission
-    setTimeout(() => {
+
+    try {
+      // EmailJS configuration
+      const serviceId = 'service_YOUR_SERVICE_ID'; // Replace with your EmailJS service ID
+      const templateId = 'template_YOUR_TEMPLATE_ID'; // Replace with your EmailJS template ID
+      const publicKey = 'YOUR_PUBLIC_KEY'; // Replace with your EmailJS public key
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'Misheckgchihana@gmail.com',
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
       setStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setStatus(''), 3000);
-    }, 1500);
+      setTimeout(() => setStatus(''), 5000);
+    } catch (error) {
+      console.error('Email send error:', error);
+      setStatus('error');
+      setTimeout(() => setStatus(''), 5000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -59,7 +78,7 @@ export default function Contact() {
 
               <div className="space-y-4">
                 <a
-                  href="mailto:your.email@example.com"
+                  href="mailto:Misheckgchihana@gmail.com"
                   className="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition group"
                 >
                   <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center group-hover:scale-110 transition">
@@ -69,12 +88,12 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-gray-500 dark:text-gray-400">Email</div>
-                    <div className="text-gray-900 dark:text-white font-medium">your.email@example.com</div>
+                    <div className="text-gray-900 dark:text-white font-medium">Misheckgchihana@gmail.com</div>
                   </div>
                 </a>
 
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+265996477485"
                   className="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition group"
                 >
                   <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center group-hover:scale-110 transition">
@@ -84,12 +103,12 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-gray-500 dark:text-gray-400">Phone</div>
-                    <div className="text-gray-900 dark:text-white font-medium">+1 (234) 567-890</div>
+                    <div className="text-gray-900 dark:text-white font-medium">+265 996 477 485</div>
                   </div>
                 </a>
 
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/misheck-chihana-b02252343/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition group"
@@ -178,8 +197,20 @@ export default function Contact() {
                 disabled={status === 'sending'}
                 className="w-full px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all hover:scale-105 font-medium shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {status === 'sending' ? 'Sending...' : status === 'success' ? 'Message Sent!' : 'Send Message'}
+                {status === 'sending' ? 'Sending...' : status === 'success' ? 'Message Sent!' : status === 'error' ? 'Failed to Send' : 'Send Message'}
               </button>
+
+              {status === 'success' && (
+                <div className="mt-4 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg text-center">
+                  Thank you! Your message has been sent successfully.
+                </div>
+              )}
+
+              {status === 'error' && (
+                <div className="mt-4 p-4 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-lg text-center">
+                  Failed to send message. Please try again or email directly.
+                </div>
+              )}
             </form>
           </div>
         </motion.div>
