@@ -6,6 +6,16 @@ import Image from 'next/image';
 const projects = [
   {
     id: 1,
+    title: 'Geo Access Malawi – GIS Decision Support',
+    description: 'Comprehensive GIS-based tool mapping accessibility to hospitals and schools using travel-time analysis. Features disaster-risk visualization (floods, landslides, cyclones) to support evidence-based planning for equitable service distribution.',
+    image: '/geo access malawi.png',
+    gradient: 'from-teal-500 to-cyan-600',
+    tags: ['GIS', 'Spatial Analysis', 'Disaster Risk', 'Dashboard', 'Planning'],
+    github: '#',
+    live: '#',
+  },
+  {
+    id: 2,
     title: 'FarmEase – Agriculture E-Commerce',
     description: 'Agriculture e-commerce platform connecting farmers and buyers. Features product browsing, cart management, and live mobile payment integration with PayChangu, Airtel Money, and TNM Mpamba.',
     image: '/farmease.jpg',
@@ -15,7 +25,7 @@ const projects = [
     live: '#',
   },
   {
-    id: 2,
+    id: 3,
     title: 'Digital Wallet System',
     description: 'Backend-driven virtual bank platform with user registration, wallet accounts, and balance management synced with PayChangu merchant account. Supports wallet-to-user transactions.',
     image: '/digital-wallet.png',
@@ -25,7 +35,7 @@ const projects = [
     live: '#',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Solar System Simulation',
     description: '3D interactive solar system simulation with textured rotating Sun, orbiting planets, and asteroid belt. Built with modern OpenGL featuring realistic celestial motion and transformations.',
     image: '/solarsystem.jpeg',
@@ -35,7 +45,7 @@ const projects = [
     live: '#',
   },
   {
-    id: 4,
+    id: 5,
     title: 'TourMalawi – Tourism Mobile App',
     description: 'Android tourism application showcasing Malawi\'s destinations, national parks, Lake Malawi, culture, and accommodations. Features dark/light mode, Firebase backend, and PayChangu payment integration.',
     image: '/tourmalawi.png',
@@ -45,7 +55,7 @@ const projects = [
     live: '#',
   },
   {
-    id: 5,
+    id: 6,
     title: 'Godot Vehicle Simulation',
     description: '3D vehicle simulation game with realistic wheel rotation, suspension physics, and environment rendering. Features improved lighting, particle effects, and enhanced vehicle dynamics.',
     image: '/game.jpg',

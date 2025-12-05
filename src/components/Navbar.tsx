@@ -39,12 +39,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
-          <a
-            href="#"
-            className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
-          >
-            Misheck
-          </a>
+          <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

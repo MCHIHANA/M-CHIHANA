@@ -17,35 +17,32 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 dark:text-white mb-6">
-            Hi, I'm{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Misheck Chihana
-            </span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 dark:text-white mb-6 px-4">
+            Hi, I'm <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Misheck Chihana</span>
           </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-4">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-4 px-4">
             Full Stack Developer & Computer Science Student
           </p>
-          <p className="text-lg text-gray-500 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-500 dark:text-gray-400 mb-12 max-w-2xl mx-auto px-4">
             4th Year BSC Computer Science | University of Malawi | Building innovative solutions with modern technologies
           </p>
 
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center px-4">
             <a
               href="#projects"
-              className="px-8 py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all hover:scale-105 font-medium shadow-lg"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all hover:scale-105 font-medium shadow-lg text-center"
             >
               View My Work
             </a>
             <a
               href="#contact"
-              className="px-8 py-4 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-full hover:bg-blue-50 dark:hover:bg-gray-800 transition-all hover:scale-105 font-medium"
+              className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-full hover:bg-blue-50 dark:hover:bg-gray-800 transition-all hover:scale-105 font-medium text-center"
             >
               Get In Touch
             </a>
             <a
               href="#cv"
-              className="px-8 py-4 bg-gray-800 dark:bg-gray-700 text-white rounded-full hover:bg-gray-900 dark:hover:bg-gray-600 transition-all hover:scale-105 font-medium shadow-lg"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-800 dark:bg-gray-700 text-white rounded-full hover:bg-gray-900 dark:hover:bg-gray-600 transition-all hover:scale-105 font-medium shadow-lg text-center"
             >
               Download CV
             </a>
