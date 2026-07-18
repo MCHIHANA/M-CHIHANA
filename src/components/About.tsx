@@ -3,35 +3,39 @@
 import { motion } from 'framer-motion';
 
 const skills = [
-  { name: 'React/Next.js', level: 90, color: 'from-blue-500 to-blue-600' },
-  { name: 'NestJS', level: 85, color: 'from-red-500 to-red-600' },
-  { name: 'TypeScript', level: 88, color: 'from-blue-600 to-blue-700' },
-  { name: 'Python', level: 85, color: 'from-yellow-500 to-yellow-600' },
-  { name: 'Golang', level: 78, color: 'from-cyan-600 to-blue-600' },
-  { name: 'AI/Machine Learning', level: 75, color: 'from-purple-600 to-pink-600' },
-  { name: 'MySQL', level: 88, color: 'from-orange-500 to-orange-600' },
-  { name: 'PostgreSQL', level: 82, color: 'from-blue-700 to-indigo-700' },
-  { name: 'C++/OpenGL', level: 80, color: 'from-purple-500 to-purple-600' },
-  { name: 'Tailwind CSS', level: 92, color: 'from-cyan-500 to-cyan-600' },
-  { name: 'Godot/GDScript', level: 75, color: 'from-indigo-500 to-indigo-600' },
-  { name: 'Payment APIs', level: 82, color: 'from-green-500 to-green-600' },
+  { name: 'React / Next.js', level: 90 },
+  { name: 'NestJS', level: 85 },
+  { name: 'TypeScript', level: 88 },
+  { name: 'Python', level: 85 },
+  { name: 'Golang', level: 78 },
+  { name: 'AI / Machine Learning', level: 75 },
+  { name: 'MySQL', level: 88 },
+  { name: 'PostgreSQL', level: 82 },
+  { name: 'C++ / OpenGL', level: 80 },
+  { name: 'Tailwind CSS', level: 92 },
+  { name: 'Network Engineering', level: 78 },
+  { name: 'Payment APIs', level: 82 },
 ];
 
 const stats = [
-  { label: 'Years of Study', value: '4th Year' },
   { label: 'Projects Completed', value: '5+' },
   { label: 'Technologies', value: '12+' },
   { label: 'Lines of Code', value: '10K+' },
+  { label: 'Domains', value: '4+' },
+];
+
+const whatIDo = [
+  'Design and develop full-stack web and mobile applications',
+  'Build and integrate backend systems, APIs, and databases',
+  'Engineer and manage network infrastructure',
+  'Develop AI and machine learning solutions',
 ];
 
 export default function About() {
   return (
-    <section id="about" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-400/10 rounded-full blur-3xl"></div>
-      </div>
+    <section id="about" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#0f0f0f] relative overflow-hidden">
+      {/* Subtle top border accent */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-white/10" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -40,35 +44,36 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          {/* Section heading */}
+          <div className="mb-14 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
               About Me
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+            <div className="w-12 h-0.5 bg-white/30 rounded-full"></div>
           </div>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
+          {/* Stats */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-14 sm:mb-16">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className="bg-white/[0.04] border border-white/10 rounded-2xl p-4 sm:p-6 hover:bg-white/[0.07] transition-all"
               >
-                <div className="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
                   {stat.value}
                 </div>
-                <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
+                <div className="text-xs sm:text-sm text-white/40">{stat.label}</div>
               </motion.div>
             ))}
           </div>
 
           {/* Main Content */}
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start">
-            {/* Left Column - Bio */}
+            {/* Left — Bio */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -76,84 +81,93 @@ export default function About() {
               transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-              <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl">
+              <div className="bg-white/[0.04] border border-white/10 rounded-2xl p-6 sm:p-8">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl"></div>
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white/10 border border-white/15 rounded-2xl flex items-center justify-center">
+                    <span className="text-white text-xl font-bold">MC</span>
+                  </div>
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
+                    <h3 className="text-lg sm:text-xl font-bold text-white">
                       Misheck Chihana
                     </h3>
-                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
-                      Full Stack Developer
+                    <p className="text-sm text-white/40">
+                      Full-Stack Developer · AI/ML Engineer · Network Engineer
                     </p>
                   </div>
                 </div>
 
-                <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                  I'm a 4th-year BSC Computer Science student at the University of Malawi, 
-                  passionate about building modern web applications, e-commerce platforms, 
-                  AI-powered solutions, and interactive 3D simulations.
+                <p className="text-sm sm:text-base text-white/60 leading-relaxed mb-4">
+                  I build scalable, reliable, and secure digital solutions — from full-stack web and
+                  mobile applications to backend systems, APIs, databases, health systems, and fintech
+                  systems — using modern software engineering practices that prioritize performance and
+                  maintainability.
                 </p>
-                <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                  My expertise spans full-stack development with React, NestJS, and Golang, 
-                  database management with MySQL and PostgreSQL, Python for AI/ML applications, 
-                  and payment system integrations. I'm dedicated to creating innovative solutions 
-                  that solve real-world problems.
+                <p className="text-sm sm:text-base text-white/60 leading-relaxed mb-6">
+                  I'm passionate about cloud computing, machine learning, and emerging technologies,
+                  driven by solving real-world problems through clean, innovative engineering.
                 </p>
 
-                <div className="flex flex-wrap gap-2 sm:gap-3">
-                  <span className="px-3 sm:px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full text-xs sm:text-sm font-medium shadow-lg">
-                    Problem Solver
-                  </span>
-                  <span className="px-3 sm:px-4 py-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-full text-xs sm:text-sm font-medium shadow-lg">
-                    Team Player
-                  </span>
-                  <span className="px-3 sm:px-4 py-2 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full text-xs sm:text-sm font-medium shadow-lg">
-                    Fast Learner
-                  </span>
+                {/* What I do */}
+                <div className="space-y-3">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-white/30 mb-3">What I do</p>
+                  {whatIDo.map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-white/40 flex-shrink-0" />
+                      <span className="text-sm text-white/60 leading-relaxed">{item}</span>
+                    </div>
+                  ))}
                 </div>
+              </div>
+
+              {/* Trait tags */}
+              <div className="flex flex-wrap gap-2">
+                {['Problem Solver', 'Team Player', 'Fast Learner'].map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-4 py-1.5 border border-white/15 text-white/60 rounded-full text-xs font-medium tracking-wide"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </motion.div>
 
-            {/* Right Column - Skills */}
+            {/* Right — Skills */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">
+              <div className="bg-white/[0.04] border border-white/10 rounded-2xl p-6 sm:p-8">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-6">
                   Skills & Expertise
                 </h3>
-                <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+                <div className="space-y-4">
                   {skills.map((skill, index) => (
                     <motion.div
                       key={skill.name}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="group"
+                      transition={{ duration: 0.4, delay: index * 0.06 }}
                     >
-                      <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-4 hover:shadow-lg transition-all hover:-translate-y-1">
-                        <div className="flex items-center justify-between mb-3">
-                          <span className="text-sm sm:text-base font-semibold text-gray-900 dark:text-white">
-                            {skill.name}
-                          </span>
-                          <span className="text-xs sm:text-sm font-bold text-gray-500 dark:text-gray-400">
-                            {skill.level}%
-                          </span>
-                        </div>
-                        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
-                          <motion.div
-                            className={`h-full bg-gradient-to-r ${skill.color} rounded-full`}
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${skill.level}%` }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1, delay: index * 0.1, ease: 'easeOut' }}
-                          />
-                        </div>
+                      <div className="flex items-center justify-between mb-1.5">
+                        <span className="text-sm font-medium text-white/70">
+                          {skill.name}
+                        </span>
+                        <span className="text-xs font-semibold text-white/30">
+                          {skill.level}%
+                        </span>
+                      </div>
+                      <div className="w-full bg-white/[0.08] rounded-full h-1.5 overflow-hidden">
+                        <motion.div
+                          className="h-full bg-white/50 rounded-full"
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.9, delay: index * 0.06, ease: 'easeOut' }}
+                        />
                       </div>
                     </motion.div>
                   ))}

@@ -55,11 +55,11 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
+            <h3 className="text-2xl font-bold text-white mb-4">
               Misheck Chihana
             </h3>
             <p className="text-gray-400 mb-4">
-              Computer Science Student | Full Stack Developer | Building innovative solutions
+              Full-Stack Developer · AI/ML Engineer · Network Engineer
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (

@@ -2,47 +2,75 @@
 
 import { motion } from 'framer-motion';
 
+const roles = [
+  'Full-Stack Developer',
+  'AI/ML Engineer',
+  'Network Engineer',
+];
+
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
+      {/* Subtle grid texture */}
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Very subtle ambient glow — no vivid colours */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/[0.03] rounded-full blur-3xl pointer-events-none" />
+
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.9, ease: 'easeOut' }}
         >
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 dark:text-white mb-6 px-4">
-            Hi, I'm <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Misheck Chihana</span>
+          {/* Name */}
+          <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight text-white mb-5 px-4 leading-tight">
+            Misheck Chihana
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-4 px-4">
-            Full Stack Developer & Computer Science Student
-          </p>
-          <p className="text-base sm:text-lg text-gray-500 dark:text-gray-400 mb-12 max-w-2xl mx-auto px-4">
-            4th Year BSC Computer Science | University of Malawi | Building innovative solutions with modern technologies
+
+          {/* Role tags */}
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 px-4">
+            {roles.map((role) => (
+              <span
+                key={role}
+                className="px-4 py-1.5 rounded-full border border-white/20 text-white/70 text-sm sm:text-base font-medium tracking-wide"
+              >
+                {role}
+              </span>
+            ))}
+          </div>
+
+          {/* Tagline */}
+          <p className="text-base sm:text-lg text-white/50 mb-12 max-w-2xl mx-auto px-4 leading-relaxed">
+            I build scalable, reliable, and secure digital solutions — from full-stack web and mobile
+            applications to backend systems, APIs, databases, health systems, and fintech systems —
+            using modern software engineering practices that prioritize performance and maintainability.
           </p>
 
+          {/* CTAs */}
           <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center px-4">
             <a
               href="#projects"
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all hover:scale-105 font-medium shadow-lg text-center"
+              className="px-7 py-3.5 bg-white text-black rounded-full hover:bg-white/90 transition-all hover:scale-105 font-semibold text-sm tracking-wide text-center"
             >
               View My Work
             </a>
             <a
               href="#contact"
-              className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-full hover:bg-blue-50 dark:hover:bg-gray-800 transition-all hover:scale-105 font-medium text-center"
+              className="px-7 py-3.5 border border-white/30 text-white rounded-full hover:bg-white/10 transition-all hover:scale-105 font-medium text-sm tracking-wide text-center"
             >
               Get In Touch
             </a>
             <a
               href="#cv"
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-800 dark:bg-gray-700 text-white rounded-full hover:bg-gray-900 dark:hover:bg-gray-600 transition-all hover:scale-105 font-medium shadow-lg text-center"
+              className="px-7 py-3.5 border border-white/15 text-white/60 rounded-full hover:bg-white/5 transition-all hover:scale-105 font-medium text-sm tracking-wide text-center"
             >
               Download CV
             </a>
@@ -55,8 +83,8 @@ export default function Hero() {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <div className="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-gray-400 dark:bg-gray-600 rounded-full mt-2"></div>
+          <div className="w-5 h-9 border border-white/25 rounded-full flex justify-center">
+            <div className="w-0.5 h-2.5 bg-white/30 rounded-full mt-2"></div>
           </div>
         </motion.div>
       </div>
