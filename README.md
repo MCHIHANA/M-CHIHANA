@@ -18,10 +18,10 @@ A refined, lightweight, black-led developer portfolio engineered with **Next.js 
 1. **`HERO`** — Clean introductory statement, professional roles, core domains, and metrics.
 2. **`ABOUT`** — Concise professional background and three core principles (Engineering, Problem Solving, Continuous Learning).
 3. **`PROJECTS`** — Compact, balanced two-column project showcase with restrained image previews, one-sentence descriptions, technology tags, and source code links:
-   - `P-01`: Geo Access Malawi — GIS Decision Support
-   - `P-02`: FarmEase — Agriculture E-Commerce & Payment Gateways
-   - `P-03`: Digital Wallet System — Backend Ledger & Transactions
-   - `P-04`: Solar System Simulation — C++ & Modern OpenGL
+   - `P-01`: DHIS2 (iCHIS) Android Capture — Sensor Integration
+   - `P-02`: Geo Access Malawi — GIS Decision Support
+   - `P-03`: FarmEase — Agriculture E-Commerce & Payment Gateways
+   - `P-04`: Digital Wallet System — Backend Ledger & Transactions
    - `P-05`: TourMalawi — Native Android & Cloud App
    - `P-06`: Godot Vehicle Simulation — RigidBody3D Physics Dynamics
 4. **`EXPERTISE`** — Preserved 7-category Technical Expertise cards (Frontend, Backend, Languages, Data, AI/ML, Graphics, Infrastructure & Fintech).
