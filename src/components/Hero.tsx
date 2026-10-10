@@ -3,88 +3,124 @@
 import { motion } from 'framer-motion';
 
 const roles = [
-  'Full-Stack Developer',
-  'AI/ML Engineer',
-  'Network Engineer',
+  'SOFTWARE ENGINEER',
+  'FULL STACK DEVELOPER',
+  'AI/ML ENGINEER',
+  'NETWORK ENGINEER',
 ];
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
-      {/* Subtle grid texture */}
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
-        }}
-      />
+    <section className="relative min-h-[85vh] flex items-center pt-32 sm:pt-40 pb-20 overflow-hidden bg-canvas border-b border-white/[0.08]">
+      {/* Background Technical Grid */}
+      <div className="absolute inset-0 tech-grid-bg opacity-70 pointer-events-none" />
 
-      {/* Very subtle ambient glow — no vivid colours */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/[0.03] rounded-full blur-3xl pointer-events-none" />
+      {/* Subtle radial falloff to keep text crisp */}
+      <div className="absolute inset-0 bg-gradient-to-b from-canvas/40 via-transparent to-canvas pointer-events-none" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Decorative hairline measurement coordinates */}
+      <div className="absolute top-28 left-6 sm:left-10 text-[10px] font-mono text-ink-muted/50 select-none hidden md:block">
+        SYS_LAT: -13.9833 // SYS_LON: 33.7833
+      </div>
+      <div className="absolute top-28 right-6 sm:right-10 text-[10px] font-mono text-ink-muted/50 select-none hidden md:block">
+        BUILD: STABLE // M-CHIHANA
+      </div>
+
+      <div className="relative z-10 max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: 'easeOut' }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-4xl flex flex-col justify-center"
         >
-          {/* Name */}
-          <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight text-white mb-5 px-4 leading-tight">
+          {/* Status Indicator */}
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border border-white/[0.12] bg-surface/90 w-fit mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-technical-lime animate-pulse" />
+            <span className="text-[10px] font-mono text-technical-lime tracking-widest uppercase">
+              SYSTEMS ARCHITECT
+            </span>
+            <span className="text-white/20 text-[10px]">|</span>
+            <span className="text-[10px] font-mono text-ink-muted tracking-wider uppercase">
+              ENGINEERING DIGITAL SOLUTIONS
+            </span>
+          </div>
+
+          {/* Primary Heading */}
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.2rem] font-bold font-heading text-ink-primary tracking-tight leading-[0.98] mb-4">
             Misheck Chihana
           </h1>
 
-          {/* Role tags */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 px-4">
-            {roles.map((role) => (
-              <span
-                key={role}
-                className="px-4 py-1.5 rounded-full border border-white/20 text-white/70 text-sm sm:text-base font-medium tracking-wide"
-              >
-                {role}
+          {/* Four Professional Roles directly below name */}
+          <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 font-mono text-xs sm:text-sm tracking-wider uppercase text-technical-lime mb-6">
+            {roles.map((role, idx) => (
+              <span key={role} className="inline-flex items-center">
+                <span>{role}</span>
+                {idx < roles.length - 1 && (
+                  <span className="ml-2.5 text-white/30 select-none">·</span>
+                )}
               </span>
             ))}
           </div>
 
-          {/* Tagline */}
-          <p className="text-base sm:text-lg text-white/50 mb-12 max-w-2xl mx-auto px-4 leading-relaxed">
-            I build scalable, reliable, and secure digital solutions — from full-stack web and mobile
-            applications to backend systems, APIs, databases, health systems, and fintech systems —
-            using modern software engineering practices that prioritize performance and maintainability.
+          {/* Supporting Headline */}
+          <p className="text-lg sm:text-2xl text-ink-primary/95 font-heading font-medium leading-snug mb-5 max-w-3xl">
+            Engineering practical solutions to complex problems.
+          </p>
+
+          {/* Introductory Paragraph */}
+          <p className="text-sm sm:text-base text-ink-secondary font-sans leading-relaxed mb-8 max-w-2xl">
+            I build reliable digital products across full-stack development, backend systems,
+            artificial intelligence, and infrastructure. My focus is on turning real-world
+            challenges into useful, well-engineered solutions.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center px-4">
+          <div className="flex flex-wrap items-center gap-4">
             <a
               href="#projects"
-              className="px-7 py-3.5 bg-white text-black rounded-full hover:bg-white/90 transition-all hover:scale-105 font-semibold text-sm tracking-wide text-center"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded bg-technical-lime text-canvas hover:bg-white transition-all font-mono text-xs font-semibold tracking-wider group shadow-[0_0_20px_rgba(183,243,151,0.2)]"
             >
-              View My Work
+              <span>EXPLORE WORK</span>
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
             </a>
+
             <a
               href="#contact"
-              className="px-7 py-3.5 border border-white/30 text-white rounded-full hover:bg-white/10 transition-all hover:scale-105 font-medium text-sm tracking-wide text-center"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded border border-white/[0.2] bg-surface text-ink-primary hover:border-white hover:bg-surface-2 transition-all font-mono text-xs font-medium tracking-wider"
             >
-              Get In Touch
-            </a>
-            <a
-              href="#cv"
-              className="px-7 py-3.5 border border-white/15 text-white/60 rounded-full hover:bg-white/5 transition-all hover:scale-105 font-medium text-sm tracking-wide text-center"
-            >
-              Download CV
+              <span>GET IN TOUCH</span>
+              <span className="text-technical-lime">↗</span>
             </a>
           </div>
-        </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <div className="w-5 h-9 border border-white/25 rounded-full flex justify-center">
-            <div className="w-0.5 h-2.5 bg-white/30 rounded-full mt-2"></div>
+          {/* Metrics Ribbon: Updated to 12+ projects */}
+          <div className="mt-12 pt-6 border-t border-white/[0.08] grid grid-cols-3 gap-6 max-w-lg">
+            <div className="border-l border-white/[0.1] pl-3.5">
+              <div className="text-xl sm:text-2xl font-bold font-mono text-ink-primary">
+                12<span className="text-technical-lime">+</span>
+              </div>
+              <div className="text-[10px] font-mono text-ink-muted uppercase">
+                Projects Delivered
+              </div>
+            </div>
+
+            <div className="border-l border-white/[0.1] pl-3.5">
+              <div className="text-xl sm:text-2xl font-bold font-mono text-ink-primary">
+                12<span className="text-technical-lime">+</span>
+              </div>
+              <div className="text-[10px] font-mono text-ink-muted uppercase">
+                Core Technologies
+              </div>
+            </div>
+
+            <div className="border-l border-white/[0.1] pl-3.5">
+              <div className="text-xl sm:text-2xl font-bold font-mono text-technical-lime">
+                100<span className="text-xs">%</span>
+              </div>
+              <div className="text-[10px] font-mono text-ink-muted uppercase">
+                Practical Focus
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>

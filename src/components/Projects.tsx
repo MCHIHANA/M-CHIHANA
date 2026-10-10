@@ -2,147 +2,163 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import SectionHeader from './SectionHeader';
 
-const projects = [
+interface Project {
+  id: string;
+  number: string;
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  githubUrl: string;
+}
+
+const projects: Project[] = [
   {
-    id: 1,
-    title: 'Geo Access Malawi – GIS Decision Support',
-    description: 'Comprehensive GIS-based tool mapping accessibility to hospitals and schools using travel-time analysis. Features disaster-risk visualization (floods, landslides, cyclones) to support evidence-based planning for equitable service distribution.',
+    id: 'geo-access',
+    number: 'P-01',
+    title: 'Geo Access Malawi — GIS Decision Support',
+    description:
+      'Spatial decision-support tool analyzing travel times to hospitals and schools, with disaster-risk visualization for public planning.',
     image: '/geo access malawi.png',
-    gradient: 'from-teal-500 to-cyan-600',
-    tags: ['GIS', 'Spatial Analysis', 'Disaster Risk', 'Dashboard', 'Planning'],
-    github: '#',
-    live: '#',
+    tags: ['GIS Analysis', 'Spatial Modeling', 'Disaster Risk', 'Interactive Maps'],
+    githubUrl: 'https://github.com/MCHIHANA',
   },
   {
-    id: 2,
-    title: 'FarmEase – Agriculture E-Commerce',
-    description: 'Agriculture e-commerce platform connecting farmers and buyers. Features product browsing, cart management, and live mobile payment integration with PayChangu, Airtel Money, and TNM Mpamba.',
+    id: 'farmease',
+    number: 'P-02',
+    title: 'FarmEase — Agriculture E-Commerce',
+    description:
+      'Agriculture e-commerce platform connecting farmers and buyers with payment gateways supporting local and international transactions.',
     image: '/farmease.jpg',
-    gradient: 'from-green-500 to-emerald-600',
-    tags: ['React', 'NestJS', 'MySQL', 'PayChangu', 'Tailwind'],
-    github: '#',
-    live: '#',
+    tags: ['React', 'NestJS', 'MySQL', 'Payment Gateways'],
+    githubUrl: 'https://github.com/MCHIHANA',
   },
   {
-    id: 3,
+    id: 'digital-wallet',
+    number: 'P-03',
     title: 'Digital Wallet System',
-    description: 'Backend-driven virtual bank platform with user registration, wallet accounts, and balance management synced with PayChangu merchant account. Supports wallet-to-user transactions.',
+    description:
+      'Backend wallet application managing user accounts, balance ledgers, and transaction workflows synced with payment gateways.',
     image: '/digital-wallet.png',
-    gradient: 'from-blue-500 to-cyan-500',
-    tags: ['NestJS', 'PayChangu', 'SQL', 'REST API', 'Railway'],
-    github: '#',
-    live: '#',
+    tags: ['NestJS', 'REST APIs', 'SQL Database', 'Payment Gateways'],
+    githubUrl: 'https://github.com/MCHIHANA',
   },
   {
-    id: 4,
+    id: 'solar-system',
+    number: 'P-04',
     title: 'Solar System Simulation',
-    description: '3D interactive solar system simulation with textured rotating Sun, orbiting planets, and asteroid belt. Built with modern OpenGL featuring realistic celestial motion and transformations.',
+    description:
+      'Interactive 3D celestial simulation featuring realistic orbital mechanics and transformations developed in modern OpenGL.',
     image: '/solarsystem.jpeg',
-    gradient: 'from-indigo-500 to-purple-600',
-    tags: ['C++', 'OpenGL', 'GLFW', 'GLM', 'GLAD'],
-    github: '#',
-    live: '#',
+    tags: ['C++', 'Modern OpenGL', 'GLFW', 'GLM'],
+    githubUrl: 'https://github.com/MCHIHANA',
   },
   {
-    id: 5,
-    title: 'TourMalawi – Tourism Mobile App',
-    description: 'Android tourism application showcasing Malawi\'s destinations, national parks, Lake Malawi, culture, and accommodations. Features dark/light mode, Firebase backend, and PayChangu payment integration.',
+    id: 'tour-malawi',
+    number: 'P-05',
+    title: 'TourMalawi — Tourism Mobile App',
+    description:
+      'Android tourism mobile application showcasing destinations across Malawi with cloud synchronization and payment processing.',
     image: '/tourmalawi.png',
-    gradient: 'from-orange-500 to-red-500',
-    tags: ['Android Studio', 'Java', 'Kotlin', 'Firebase', 'PayChangu'],
-    github: '#',
-    live: '#',
+    tags: ['Android', 'Java / Kotlin', 'Firebase', 'Payment Gateways'],
+    githubUrl: 'https://github.com/MCHIHANA',
   },
   {
-    id: 6,
+    id: 'godot-simulation',
+    number: 'P-06',
     title: 'Godot Vehicle Simulation',
-    description: '3D vehicle simulation game with realistic wheel rotation, suspension physics, and environment rendering. Features improved lighting, particle effects, and enhanced vehicle dynamics.',
+    description:
+      '3D vehicle dynamics simulation engine with custom suspension physics, wheel friction calculations, and real-time lighting.',
     image: '/game.jpg',
-    gradient: 'from-purple-500 to-pink-500',
     tags: ['Godot', 'GDScript', 'VehicleBody3D', '3D Physics'],
-    github: '#',
-    live: '#',
+    githubUrl: 'https://github.com/MCHIHANA',
   },
 ];
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 text-center">
-            Featured Projects
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-12 text-center max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and experience
-          </p>
+    <section
+      id="projects"
+      className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-canvas relative border-b border-white/[0.08]"
+    >
+      <div className="max-w-[1320px] mx-auto">
+        <SectionHeader
+          number="02"
+          label="PROJECTS"
+          title="Featured Projects"
+          description="A selection of software systems, applications, and simulations built with a focus on real utility and sound engineering."
+        />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
-              >
-                <div className="h-48 relative overflow-hidden bg-gray-200 dark:bg-gray-700">
-                  <Image 
-                    src={project.image} 
-                    alt={project.title}
-                    width={800}
-                    height={600}
-                    loading="lazy"
-                    quality={85}
-                    placeholder="blur"
-                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA3gAA="
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">
+        {/* Compact, balanced two-column grid on desktop */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {projects.map((project, idx) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: idx * 0.06 }}
+              className="group rounded-lg border border-white/[0.08] bg-surface hover:border-white/[0.2] transition-all overflow-hidden flex flex-col sm:flex-row items-stretch"
+            >
+              {/* Image Preview: Compact ~35% width on desktop */}
+              <div className="relative w-full sm:w-[36%] h-40 sm:h-auto min-h-[140px] bg-canvas border-b sm:border-b-0 sm:border-r border-white/[0.06] flex-shrink-0 overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover object-center filter brightness-90 contrast-105 group-hover:scale-105 transition-transform duration-500 ease-out"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 25vw, 20vw"
+                  loading="lazy"
+                />
+                <span className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-black/85 backdrop-blur-sm border border-white/15 font-mono text-[10px] text-technical-lime font-semibold">
+                  {project.number}
+                </span>
+              </div>
+
+              {/* Text & Meta: ~65% width */}
+              <div className="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="font-heading font-bold text-base text-ink-primary group-hover:text-white transition-colors mb-2 leading-snug">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
+
+                  <p className="font-sans text-xs text-ink-secondary leading-relaxed mb-4">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+
+                  <div className="flex flex-wrap gap-1.5 mb-4">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium"
+                        className="px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06] text-ink-muted font-mono text-[10px]"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <div className="flex gap-4">
-                    <a
-                      href={project.github}
-                      className="flex-1 text-center px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 transition font-medium"
-                    >
-                      Code
-                    </a>
-                    <a
-                      href={project.live}
-                      className="flex-1 text-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium"
-                    >
-                      Live Demo
-                    </a>
-                  </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+
+                <div className="pt-3 border-t border-white/[0.05] flex items-center justify-between">
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-mono text-ink-primary hover:text-technical-lime transition-colors"
+                  >
+                    <span>SOURCE CODE</span>
+                    <span className="text-[10px]">↗</span>
+                  </a>
+
+                  <span className="text-[10px] font-mono text-ink-muted">
+                    VERIFIED
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
