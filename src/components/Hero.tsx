@@ -106,7 +106,7 @@ export default function Hero() {
 
             <div className="border-l border-white/[0.1] pl-3.5">
               <div className="text-xl sm:text-2xl font-bold font-mono text-ink-primary">
-                12<span className="text-technical-lime">+</span>
+                15<span className="text-technical-lime">+</span>
               </div>
               <div className="text-[10px] font-mono text-ink-muted uppercase">
                 Core Technologies
